@@ -1,7 +1,7 @@
 ## Setup
 
 
-1. Install Python 3.7.9 from https://www.python.org/
+1. Install Python 3.7.9 (https://www.python.org/)
 
     > This version of Python as well as the other packages below are intentionally selected for compatibility.
 
