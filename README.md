@@ -5,15 +5,17 @@
 
     > This version of Python as well as the other packages below are intentionally selected for compatibility.
 
-2. If you have not installed `virtualenv`, install it using the command `python -m pip install virtualenv`.
+2. Install Tesseract (https://github.com/UB-Mannheim/tesseract/wiki) and add the install location in your `path` environment variables. 
 
-3. Create a virtual environment using the command `python -m virtualenv venv`.
+    > For Windows, you can add Tesseract into your 'path' environment variables by searching for 'Edit environment variables for your account' in the Windows search bar, go to 'Path', click 'Edit', then 'New', and include Tesseract's install location on your computer. 
 
-4. Activate the virtual environment by running `venv\Scripts\activate` on Windows or `. venv/bin/activate` on MacOS or Linux.
+3. If you have not installed `virtualenv`, install it using the command `python -m pip install virtualenv`.
 
-5. Install Tesseract (https://github.com/UB-Mannheim/tesseract/wiki), adding the install location in your `path` environment variable. (Don't forget to restart your command prompt / terminal, and re-activate your virtual environment)
+4. Create a virtual environment using the command `python -m virtualenv venv`.
 
-6. Modify the `settings.ini` file with the path Tesseract is installed in. The path should end in "tessdata".
+5. Activate the virtual environment by running `venv\Scripts\activate` on Windows or `. venv/bin/activate` on MacOS or Linux.
+
+6. Modify the `settings.ini` file in the 'censoring-scripts' folder with the path Tesseract is installed in. The path should end in "tessdata".
 
 7. Install `pytorch` using the command `python -m pip install torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html`
 
@@ -24,4 +26,3 @@
 9. Install the pip dependencies by running `python -m pip install -r requirements.txt`.
 
 10. To test if everything is working correctly, run the command `python .\main.py`, which should create a folder named "censored", populated with censored versions of the images found in the "image" folder.
-
