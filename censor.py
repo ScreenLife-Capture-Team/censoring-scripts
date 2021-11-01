@@ -208,6 +208,10 @@ class Censor:
                     self.apply_blur(image, x, y, x+w, y+h)
                     continue
 
+                if '@' in text:
+                    self.apply_blur(image, x, y, x+w, y+h)
+                    continue
+
                 # Apply Spacy to identify names
                 doc = self.nlp(text)
                 if doc.ents and doc.ents[0].label_ == "PERSON":
