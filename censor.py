@@ -84,9 +84,14 @@ class Censor:
                 if not cv2.imwrite(dest_path, self.prev_censored):
                     raise Exception("Could not write image")
                 return
+        try:
+            image = cv2.imread(image_path)
+            img_matlab = image.copy()
+        except AttributeError:
+            fileobj = open('error_logs.txt', 'a')
+            fileobj.write('could not read file ', + image_path)
+            return
 
-        image = cv2.imread(image_path)
-        img_matlab = image.copy()
         tmp = img_matlab[:, :, 2].copy()
         img_matlab[:, :, 2] = img_matlab[:, :, 0]
         img_matlab[:, :, 0] = tmp
